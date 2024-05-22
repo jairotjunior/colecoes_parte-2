@@ -10,5 +10,36 @@ public class SeparacaoSexo {
   }
 
   public void cadastro(){
+    Scanner ler = new Scanner (System.in);
+    List<String> masculino = new ArrayList<>();
+    List<String> feminino = new ArrayList<>();
 
+    System.out.println("Digite 'sim', para cadastrar e 'não', para finalizar");
+    String cadastrar = ler.next();
+
+    while(cadastrar.intern() == "sim"){
+
+      System.out.println("Digite um nome: ");
+      String nome = ler.next();
+      System.out.println("Digite o sexo: ");
+      String sexo = ler.next();
+
+      if(sexo.intern() == "masculino"){
+        masculino.add(nome);
+      }
+      else if (sexo.intern() == "feminino"){
+        feminino.add(nome);
+      }
+      else{
+        System.out.println("Valor inválido, Digite no campo 'sexo', somente 'masculino' ou 'feminino'");        
+      }
+
+      System.out.println("Digite sim, para cadastrar e não, para finalizar");
+      cadastrar = ler.next();
+    }
+
+    ler.close();
+    System.out.println("Masculino " + masculino);
+    System.out.println("Feminino " + feminino);
+  }
 }
