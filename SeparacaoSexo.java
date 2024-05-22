@@ -1,6 +1,7 @@
 package Java.Colecoes_Parte1;
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class SeparacaoSexo {
@@ -26,9 +27,11 @@ public class SeparacaoSexo {
 
       if(sexo.intern() == "masculino"){
         masculino.add(nome);
+        Collections.sort(masculino);
       }
       else if (sexo.intern() == "feminino"){
         feminino.add(nome);
+        Collections.sort(feminino);
       }
       else{
         System.out.println("Valor inválido, Digite no campo 'sexo', somente 'masculino' ou 'feminino'");        
